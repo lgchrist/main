@@ -25,14 +25,14 @@ public class HypergraphMain
         Hypergraph hGraph = new Hypergraph();
         
         ArrayList aryList = new ArrayList();
-        
-//        aryList.add(0);
-//        aryList.add(5);
+       
+        aryList.add(0);
+        aryList.add(5);
         
         //
-        //Create the hypergraph
+        //Create hgraph 
         //
-        for(int count = 0; count < 6; count++)
+        for(int count = 0; count < 10; count++)
         {
         	//add six nodes 
         	//addNode(T data, int id)
@@ -64,16 +64,40 @@ public class HypergraphMain
 		//
 		//make hypergraph --> digraph
 		//
-        DiGraph DG = new DiGraph(hGraph);
-        System.out.println("Digraph from Hypergraph: " + DG);
+//        DiGraph DG = new DiGraph(hGraph);
+//        System.out.println("Digraph from Hypergraph: " + DG);
+//        
+//      System.out.println("Dijkstra");
+//		Dijkstra dijkstra = new Dijkstra(DG, DG.getNode(0));
+//		dijkstra.execute();
+//		System.out.println(dijkstra.toString());
         
-        System.out.println("Dijkstra");
-        
-        //Dijkstra(DiGraph dg, Node s) s = start node
-		Dijkstra dijkstra = new Dijkstra(DG, DG.getNode(1));
-		dijkstra.execute();
-		System.out.println(dijkstra.toString());
-        
+		//
+		//generate random hypergraph		
+        //
+		HypergraphGenerator randHypergraph = new HypergraphGenerator();
+		
+		ArrayList<Hypernode> nodes = new ArrayList();
+		
+		for(int i = 0; i < 1500; i++)
+		{
+			nodes.add(new Hypernode(i,i));
+		}
+		
+		randHypergraph.genRandomHypergraph(nodes, 1);
+		
+		DiGraph DG3 = new DiGraph(randHypergraph.genRandomHypergraph(nodes, 1));
+		
+//		System.out.println("-----------------------------PRINT RAND HYPERGRAPH--------------------------------");
+//		System.out.println(randHypergraph.genRandomHypergraph(nodes, 1).toString());
+//		
+//		System.out.println("-----------------------------PRINT RAND DIGRAPH--------------------------------");
+//		System.out.println("Digraph: \n" + DG3);
+		
+		Dijkstra dijkstra1 = new Dijkstra(DG3, DG3.getNode(0));
+		dijkstra1.execute();
+		System.out.println(dijkstra1.toString());
+		
 //        //
 //        //create path!
 //        //
