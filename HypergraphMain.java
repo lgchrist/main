@@ -109,8 +109,13 @@ public class HypergraphMain
 		//			System.out.println(dijkstra2.toString());
 		//			dijkstra2.resetLengthOfPath();
 		//		}
-		System.out.println("Execute ALL");
-		dijkstra2.excecuteAll();
+		System.out.println("Execute: ");
+		dijkstra2.execute();
+		System.out.println(dijkstra2.toString());
+		
+//		System.out.println("~~~~~~~~~~~~~Execute all: ");
+//		dijkstra2.executeAll();
+//		System.out.println(dijkstra2.toString());
 
 
 
