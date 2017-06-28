@@ -65,38 +65,38 @@ public class HypergraphMain
 		//make hypergraph --> digraph
 		//
 		DiGraph DG = new DiGraph(hGraph);
-		//		System.out.println("Digraph from Hypergraph: \n" + DG);
-		//
-		//		System.out.println("Dijkstra");
-		//		Dijkstra dijkstra = new Dijkstra(DG, DG.getNode(1));
-		//		dijkstra.execute();
-		//		System.out.println(dijkstra.toString());
+		System.out.println("Digraph from Hypergraph: \n" + DG);
+
+		System.out.println("Dijkstra");
+		Dijkstra dijkstra = new Dijkstra(DG, DG.getNode(0));
+		dijkstra.execute();
+		System.out.println(dijkstra.toString());
 
 		//
 		//generate random hypergraph		
 		//
-		//		HypergraphGenerator randHypergraph = new HypergraphGenerator();
-		//
-		//		ArrayList<Hypernode> nodes = new ArrayList();
-		//
-		//		for(int i = 0; i < 6; i++)
-		//		{
-		//			nodes.add(new Hypernode(i,i));
-		//		}
-		//
-		//		randHypergraph.genRandomHypergraph(nodes, 1);
-		//
-		//		DiGraph DG3 = new DiGraph(randHypergraph.genRandomHypergraph(nodes, 1));
-		//
-		//		System.out.println("-----------------------------PRINT RAND HYPERGRAPH--------------------------------");
-		//		System.out.println(randHypergraph.genRandomHypergraph(nodes, 1).toString());
-		//
-		//		System.out.println("-----------------------------PRINT RAND DIGRAPH--------------------------------");
-		//		System.out.println("Digraph: \n" + DG3);
-		//
-		//		Dijkstra dijkstra1 = new Dijkstra(DG3, DG3.getNode(0));
-		//		dijkstra1.execute();
-		//		System.out.println(dijkstra1.toString());
+		HypergraphGenerator randHypergraph = new HypergraphGenerator();
+
+		ArrayList<Hypernode> nodes = new ArrayList();
+
+		for(int i = 0; i < 6; i++)
+		{
+			nodes.add(new Hypernode(i,i));
+		}
+
+		randHypergraph.genRandomHypergraph(nodes, 1);
+
+		DiGraph DG3 = new DiGraph(randHypergraph.genRandomHypergraph(nodes, 1));
+
+		System.out.println("-----------------------------PRINT RAND HYPERGRAPH--------------------------------");
+		System.out.println(randHypergraph.genRandomHypergraph(nodes, 1).toString());
+
+		System.out.println("-----------------------------PRINT RAND DIGRAPH--------------------------------");
+		System.out.println("Digraph: \n" + DG3);
+
+		Dijkstra dijkstra1 = new Dijkstra(DG3, DG3.getNode(0));
+		dijkstra1.execute();
+		System.out.println(dijkstra1.toString());
 
 
 
@@ -112,10 +112,10 @@ public class HypergraphMain
 		System.out.println("Execute: ");
 		dijkstra2.execute();
 		System.out.println(dijkstra2.toString());
-		
-//		System.out.println("~~~~~~~~~~~~~Execute all: ");
-//		dijkstra2.executeAll();
-//		System.out.println(dijkstra2.toString());
+
+		//		System.out.println("~~~~~~~~~~~~~Execute all: ");
+		//		dijkstra2.executeAll();
+		//		System.out.println(dijkstra2.toString());
 
 
 
